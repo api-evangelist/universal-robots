@@ -1,0 +1,206 @@
+vocabulary:
+  name: Universal Robots Vocabulary
+  description: >-
+    Key industrial and robotics concepts covering Universal Robots cobots,
+    their wire-level protocols, software stack, and ecosystem. Derived from
+    publicly available Universal Robots developer documentation.
+  version: "1.0.0"
+  terms:
+
+    - term: Cobot
+      definition: >-
+        A collaborative robot (cobot) designed to operate safely alongside
+        human workers in shared workspaces without requiring safety cages.
+        Universal Robots manufactures cobots in the e-Series and UR-series
+        product lines with payloads from 3 kg to 30 kg.
+      tags:
+        - robotics
+        - hardware
+        - safety
+        - collaboration
+
+    - term: RTDE
+      definition: >-
+        Real-Time Data Exchange (RTDE) is Universal Robots' synchronous
+        binary TCP protocol on port 30004. It enables external applications
+        to stream robot state at 500 Hz (e-Series) or 125 Hz (CB3) and
+        write input registers back into the controller. RTDE is the
+        preferred integration channel for vision-guided motion, OEE
+        telemetry, and ROS/ROS 2 drivers.
+      tags:
+        - protocol
+        - tcp
+        - real-time
+        - telemetry
+        - integration
+
+    - term: Dashboard Server
+      definition: >-
+        A plain-text TCP command interface on port 29999 that allows remote
+        control of a UR robot: powering on/off, loading and playing
+        programs, querying safety state, and managing installations.
+        Dashboard Server is the simplest remote-control entry point and is
+        suitable for MES integration.
+      tags:
+        - protocol
+        - tcp
+        - remote-control
+        - mes
+
+    - term: URScript
+      definition: >-
+        URScript is Universal Robots' purpose-built domain-specific
+        scripting language for cobot motion planning, I/O control, and
+        process logic. Programs can be authored in the PolyScope teach
+        pendant, streamed over the Secondary Client Interface, or generated
+        by external tooling such as MoveIt or the ROS 2 driver.
+      tags:
+        - scripting
+        - dsl
+        - motion-control
+        - programming
+
+    - term: URCap
+      definition: >-
+        A URCap is an installable software extension for Universal Robots
+        cobots. The legacy URCap SDK (PolyScope 5) uses Java; the
+        next-generation PolyScope X URCap SDK uses TypeScript/HTML with
+        Docker-based containerization. URCaps add program nodes,
+        installation screens, and hardware driver contributions
+        (grippers, vision, screwdrivers) and are distributed through the
+        UR+ marketplace.
+      tags:
+        - sdk
+        - extension
+        - polyscope
+        - java
+        - typescript
+
+    - term: PolyScope
+      definition: >-
+        PolyScope is the teach-pendant operating system software that runs
+        on Universal Robots cobots. PolyScope 5 is the established version
+        running on e-Series and CB3 robots; PolyScope X is the
+        next-generation version for UR15, UR20, UR30, and newer cobots,
+        featuring a rebuilt TypeScript/HTML architecture.
+      tags:
+        - software
+        - teach-pendant
+        - hmi
+        - operating-system
+
+    - term: Primary Client Interface
+      definition: >-
+        A streaming binary TCP interface on port 30001 that emits robot
+        state, configuration messages, and accepts URScript commands at
+        10 Hz. The Primary interface includes configuration data packets
+        not available on other interfaces.
+      tags:
+        - protocol
+        - tcp
+        - binary
+        - urscript
+
+    - term: Secondary Client Interface
+      definition: >-
+        A streaming binary TCP interface on port 30002 operating at 10 Hz.
+        The Secondary interface is the recommended channel for sending
+        URScript programs and commands at runtime from external systems.
+      tags:
+        - protocol
+        - tcp
+        - binary
+        - urscript
+
+    - term: Tool Center Point (TCP)
+      definition: >-
+        The Tool Center Point (TCP) is the reference coordinate frame
+        defined at the tip of the robot's end-effector. All motion
+        commands and Cartesian-space trajectories are expressed relative
+        to the TCP. Universal Robots cobots support multiple named TCP
+        frames stored in the installation.
+      tags:
+        - kinematics
+        - coordinate-frame
+        - motion
+        - end-effector
+
+    - term: UR+ Ecosystem
+      definition: >-
+        The UR+ program is Universal Robots' certified third-party
+        ecosystem of 500+ end-effectors, vision systems, software
+        extensions, and URCap applications that are validated and
+        distributed through the universal-robots.com/plus marketplace.
+        UR+ partners develop accessories that integrate tightly with
+        PolyScope and the robot's I/O system.
+      tags:
+        - ecosystem
+        - marketplace
+        - partner
+        - end-effector
+        - vision
+
+    - term: Joint State
+      definition: >-
+        The joint state is a vector of six values representing the
+        angular position (radians), velocity (rad/s), and current (A) of
+        each of the six revolute joints in a UR cobot. Joint state is
+        continuously broadcast over the RTDE, Primary, Secondary, and
+        Real-Time interfaces.
+      tags:
+        - telemetry
+        - kinematics
+        - state
+        - joints
+
+    - term: Safety State
+      definition: >-
+        The safety state reflects the current operational mode of the
+        UR safety system, including normal operation, reduced mode,
+        safeguard stop, emergency stop, and fault conditions. Safety state
+        can be queried via the Dashboard Server and is broadcast in RTDE
+        and interface packets.
+      tags:
+        - safety
+        - state
+        - monitoring
+
+    - term: Collaborative Operation
+      definition: >-
+        Collaborative operation refers to robot motion performed under
+        ISO/TS 15066 safety-rated speed and force limits that allow humans
+        and robots to share the same workspace simultaneously. Universal
+        Robots cobots implement power-and-force limiting (PFL) to enable
+        collaborative operation without perimeter guarding.
+      tags:
+        - safety
+        - iso
+        - collaboration
+        - force-limiting
+
+    - term: End-Effector
+      definition: >-
+        An end-effector (EOAT — end of arm tooling) is the device mounted
+        at the robot's Tool Flange that interacts with the workpiece:
+        grippers, welding torches, screwdrivers, cameras, or dispensers.
+        UR cobots expose a tool flange (ISO 9409-1-50-4-M6) and a Tool
+        Communication Interface (TCI) for end-effector power and data.
+      tags:
+        - hardware
+        - tooling
+        - gripper
+        - flange
+
+    - term: Real-Time Interface
+      definition: >-
+        The Real-Time Interface is a binary state streaming interface on
+        port 30003 emitting robot state at 125 Hz (CB3) or 500 Hz
+        (e-Series). It predates RTDE and is still supported for low-latency
+        one-way state streaming; new integrations are recommended to prefer
+        RTDE for its configurable schema and bidirectional capability.
+      tags:
+        - protocol
+        - tcp
+        - binary
+        - real-time
+        - telemetry

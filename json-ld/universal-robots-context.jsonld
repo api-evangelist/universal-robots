@@ -1,0 +1,135 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ur": "https://www.universal-robots.com/vocab#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+
+    "UniversalRobots": {
+      "@id": "schema:Organization",
+      "@type": "@id"
+    },
+    "name": "schema:name",
+    "url": {
+      "@id": "schema:url",
+      "@type": "@id"
+    },
+    "description": "schema:description",
+    "foundingDate": "schema:foundingDate",
+    "foundingLocation": "schema:foundingLocation",
+    "parentOrganization": {
+      "@id": "schema:parentOrganization",
+      "@type": "@id"
+    },
+    "industry": "schema:industry",
+    "sameAs": {
+      "@id": "schema:sameAs",
+      "@type": "@id"
+    },
+
+    "Cobot": {
+      "@id": "ur:Cobot",
+      "@type": "@id"
+    },
+    "RobotArm": {
+      "@id": "ur:RobotArm",
+      "@type": "@id"
+    },
+    "eSeries": {
+      "@id": "ur:eSeries",
+      "@type": "@id"
+    },
+    "PolyScope": {
+      "@id": "ur:PolyScope",
+      "@type": "@id"
+    },
+    "PolyScopeX": {
+      "@id": "ur:PolyScopeX",
+      "@type": "@id"
+    },
+    "URCap": {
+      "@id": "ur:URCap",
+      "@type": "@id"
+    },
+    "URScript": {
+      "@id": "ur:URScript",
+      "@type": "@id"
+    },
+    "RTDE": {
+      "@id": "ur:RTDE",
+      "@type": "@id"
+    },
+    "DashboardServer": {
+      "@id": "ur:DashboardServer",
+      "@type": "@id"
+    },
+    "PrimaryInterface": {
+      "@id": "ur:PrimaryInterface",
+      "@type": "@id"
+    },
+    "SecondaryInterface": {
+      "@id": "ur:SecondaryInterface",
+      "@type": "@id"
+    },
+    "RealTimeInterface": {
+      "@id": "ur:RealTimeInterface",
+      "@type": "@id"
+    },
+    "XMLRPC": {
+      "@id": "ur:XMLRPC",
+      "@type": "@id"
+    },
+
+    "payload": {
+      "@id": "ur:payload",
+      "@type": "xsd:decimal"
+    },
+    "reach": {
+      "@id": "ur:reach",
+      "@type": "xsd:decimal"
+    },
+    "port": {
+      "@id": "ur:port",
+      "@type": "xsd:integer"
+    },
+    "cycleRate": {
+      "@id": "ur:cycleRate",
+      "@type": "xsd:decimal"
+    },
+    "protocol": "ur:protocol",
+    "sdk": {
+      "@id": "ur:sdk",
+      "@type": "@id"
+    },
+    "documentation": {
+      "@id": "schema:documentation",
+      "@type": "@id"
+    },
+
+    "URPlusEcosystem": {
+      "@id": "ur:URPlusEcosystem",
+      "@type": "@id"
+    },
+    "EndEffector": {
+      "@id": "ur:EndEffector",
+      "@type": "@id"
+    },
+    "ROSDriver": {
+      "@id": "ur:ROSDriver",
+      "@type": "@id"
+    },
+    "SafetyState": {
+      "@id": "ur:SafetyState",
+      "@type": "@id"
+    },
+    "JointState": {
+      "@id": "ur:JointState",
+      "@type": "@id"
+    },
+    "ToolCenterPoint": {
+      "@id": "ur:ToolCenterPoint",
+      "@type": "@id"
+    }
+  }
+}
