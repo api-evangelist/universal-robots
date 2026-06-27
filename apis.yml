@@ -73,11 +73,11 @@ apis:
         url: https://docs.universal-robots.com/
       - type: Documentation
         url: https://www.universal-robots.com/articles/ur/interface-communication/real-time-data-exchange-rtde-guide/
-      - type: SDK
+      - type: SDKs
         url: https://github.com/UniversalRobots/RTDE_Python_Client_Library
-      - type: SDK
+      - type: SDKs
         url: https://github.com/UniversalRobots/Universal_Robots_Client_Library
-      - type: SDK
+      - type: SDKs
         url: https://github.com/UniversalRobots/RTDE_ROS2_Publisher
   - aid: universal-robots:dashboard-server
     name: Universal Robots Dashboard Server
@@ -98,7 +98,7 @@ apis:
         url: https://www.universal-robots.com/articles/ur/dashboard-server-cb-series-port-29999/
       - type: Documentation
         url: https://www.universal-robots.com/articles/ur/dashboard-server-e-series-port-29999/
-      - type: SDK
+      - type: SDKs
         url: https://github.com/UniversalRobots/Universal_Robots_Client_Library
   - aid: universal-robots:primary-secondary-client-interface
     name: Universal Robots Primary and Secondary Client Interface
@@ -120,7 +120,7 @@ apis:
         url: https://www.universal-robots.com/articles/ur/interface-communication/remote-control-via-tcpip/
       - type: Documentation
         url: https://www.universal-robots.com/articles/ur/interface-communication/overview-of-client-interfaces/
-      - type: SDK
+      - type: SDKs
         url: https://github.com/UniversalRobots/Universal_Robots_Client_Library
   - aid: universal-robots:realtime-interface
     name: Universal Robots Real-Time Interface
@@ -173,7 +173,7 @@ apis:
         url: https://www.universal-robots.com/products/ur-developer-suite/urscript/
       - type: Documentation
         url: https://www.universal-robots.com/articles/ur/programming/
-      - type: SDK
+      - type: SDKs
         url: https://github.com/UniversalRobots/URScript_Examples
   - aid: universal-robots:urcap-sdk
     name: URCap SDK (PolyScope 5)
@@ -193,7 +193,7 @@ apis:
     properties:
       - type: Documentation
         url: https://www.universal-robots.com/products/ur-developer-suite/urcap/
-      - type: SDK
+      - type: SDKs
         url: https://github.com/UniversalRobots/URCap-Samples
       - type: Marketplace
         url: https://www.universal-robots.com/plus/
@@ -216,7 +216,7 @@ apis:
     properties:
       - type: Documentation
         url: https://docs.universal-robots.com/polyscopex/
-      - type: SDK
+      - type: SDKs
         url: https://github.com/UniversalRobots/PolyScopeX_URCap_SDK
 common:
   - type: Website
@@ -227,7 +227,7 @@ common:
     url: https://docs.universal-robots.com/
   - type: GitHub
     url: https://github.com/UniversalRobots
-  - type: Forum
+  - type: Forums
     url: https://forum.universal-robots.com/
   - type: Marketplace
     url: https://www.universal-robots.com/plus/
