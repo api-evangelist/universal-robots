@@ -219,6 +219,8 @@ apis:
       - type: SDKs
         url: https://github.com/UniversalRobots/PolyScopeX_URCap_SDK
 common:
+  - type: DomainSecurity
+    url: security/universal-robots-domain-security.yml
   - type: Website
     url: https://www.universal-robots.com/
   - type: DeveloperSuite
