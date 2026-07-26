@@ -26,9 +26,20 @@ description: >-
   does not publish a public HTTP/REST API or OpenAPI specification — all
   programmatic access is via the documented socket protocols and SDKs.
 type: Index
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
 position: Provider
 access: 3rd-Party
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/universal-robots.png
 tags:
   - Robotics
   - Collaborative Robots
@@ -47,7 +58,7 @@ tags:
   - Hardware
 url: https://raw.githubusercontent.com/api-evangelist/universal-robots/refs/heads/main/apis.yml
 created: '2026-05-25'
-modified: '2026-05-25'
+modified: '2026-07-25'
 specificationVersion: '0.20'
 apis:
   - aid: universal-robots:rtde
@@ -122,38 +133,6 @@ apis:
         url: https://www.universal-robots.com/articles/ur/interface-communication/overview-of-client-interfaces/
       - type: SDKs
         url: https://github.com/UniversalRobots/Universal_Robots_Client_Library
-  - aid: universal-robots:realtime-interface
-    name: Universal Robots Real-Time Interface
-    description: >-
-      Binary state interface on port 30003 emitting robot state at the
-      125 Hz / 500 Hz controller cycle. Predates RTDE and is still
-      supported for low-latency one-way state streaming; new
-      integrations should prefer RTDE.
-    humanURL: https://www.universal-robots.com/articles/ur/interface-communication/remote-control-via-tcpip/
-    tags:
-      - Real-Time
-      - Telemetry
-      - TCP
-      - Binary Protocol
-    properties:
-      - type: Documentation
-        url: https://www.universal-robots.com/articles/ur/interface-communication/remote-control-via-tcpip/
-  - aid: universal-robots:xml-rpc
-    name: Universal Robots XML-RPC
-    description: >-
-      URScript exposes the `xmlrpc_factory` primitive, letting a URScript
-      program call out to any user-hosted XML-RPC server during program
-      execution. This is the canonical way to delegate vision-system
-      decisions, business logic, or database lookups from a robot program
-      to an off-board service.
-    humanURL: https://www.universal-robots.com/articles/ur/interface-communication/xml-rpc-tutorial/
-    tags:
-      - XML-RPC
-      - URScript
-      - Integration
-    properties:
-      - type: Documentation
-        url: https://www.universal-robots.com/articles/ur/interface-communication/xml-rpc-tutorial/
   - aid: universal-robots:urscript
     name: URScript
     description: >-
@@ -218,6 +197,22 @@ apis:
         url: https://docs.universal-robots.com/polyscopex/
       - type: SDKs
         url: https://github.com/UniversalRobots/PolyScopeX_URCap_SDK
+  - aid: universal-robots:realtime-interface
+    name: Universal Robots Real-Time Interface
+    description: >-
+      Binary state interface on port 30003 emitting robot state at the
+      125 Hz / 500 Hz controller cycle. Predates RTDE and is still
+      supported for low-latency one-way state streaming; new
+      integrations should prefer RTDE.
+    humanURL: https://www.universal-robots.com/articles/ur/interface-communication/remote-control-via-tcpip/
+    tags:
+      - Real-Time
+      - Telemetry
+      - TCP
+      - Binary Protocol
+    properties:
+      - type: Documentation
+        url: https://www.universal-robots.com/articles/ur/interface-communication/remote-control-via-tcpip/
 common:
   - type: DomainSecurity
     url: security/universal-robots-domain-security.yml
