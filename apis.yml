@@ -225,6 +225,11 @@ apis:
       - type: Documentation
         url: https://www.universal-robots.com/articles/ur/interface-communication/remote-control-via-tcpip/
 common:
+  - type: ParentCompany
+    url: https://apis.io/providers/teradyne/
+    name: Teradyne
+    x-relationship: acquired
+    x-evidence: "Universal Robots is a Danish collaborative-robot (cobot) manufacturer headquartered in Odense, Denmark, founded in 2005 by Esben Østergaard, Kasper Støy, and Kristian Kassow, and acquired by Teradyne in 2015 for USD 285 million."
   - type: DomainSecurity
     url: security/universal-robots-domain-security.yml
   - type: Website
