@@ -111,6 +111,11 @@ apis:
       Universal_Robots_Client_Library and the ROS / ROS 2 drivers.
     humanURL: https://www.universal-robots.com/articles/ur/dashboard-server-cb-series-port-29999/
     tags:
+      - Dashboards
+      - Remote Control
+      - TCP
+      - Text Protocol
+    tags_raw:
       - Dashboard
       - Remote Control
       - TCP
