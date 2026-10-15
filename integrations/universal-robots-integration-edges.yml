@@ -1,0 +1,50 @@
+edges:
+- partner_name: Open Robotics (ROS package index)
+  partner: null
+  partner_match: register
+  type: register
+  direction: partner-built
+  category: ROS packages
+  evidence: https://github.com/UniversalRobots/Universal_Robots_Client_Library.git
+  channel: standard-directory
+  relationship: standard-participant
+  contract_reference:
+    register: ROS 2 rosdistro (repo.ros2.org/rosdistro_cache)
+    spec_file: null
+    standard: ROS 2
+    role: ros-package-maintainer
+    matched_domain: universal-robots.com
+    matched_by: domain
+    source_owner: UniversalRobots
+    distros:
+    - humble
+    - jazzy
+    - kilted
+    - rolling
+    packages: 11
+    sample_packages:
+    - ur
+    - ur_bringup
+    - ur_calibration
+    - ur_client_library
+    - ur_controllers
+    - ur_dashboard_msgs
+    - ur_description
+    - ur_moveit_config
+    signal_note: 'participation only: packages/distros are context, never read'
+    detected_by: sweep-industrial-robotics.py
+    detected: '2026-10-15'
+  detected_by: sweep-industrial-robotics.py
+  first_seen: '2026-10-15'
+generated: '2026-10-15'
+method: searched
+source:
+- https://opcfoundation.org/products/
+- https://marketplace.odva.org/organizations
+checked:
+- https://marketplace.odva.org/organizations
+- https://opcfoundation.org/products/
+- https://repo.ros2.org/rosdistro_cache/humble-cache.yaml.gz
+- https://repo.ros2.org/rosdistro_cache/jazzy-cache.yaml.gz
+- https://repo.ros2.org/rosdistro_cache/kilted-cache.yaml.gz
+- https://repo.ros2.org/rosdistro_cache/rolling-cache.yaml.gz
