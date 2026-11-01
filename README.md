@@ -1,4 +1,4 @@
-# Universal Robots (universal-robots)
+# Universal Robots
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,132 +64,104 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Universal Robots is a Danish collaborative-robot (cobot) manufacturer headquartered in Odense, Denmark, founded in 2005 and acquired by Teradyne in 2015 for USD 285 million. With more than 100,000 cobots sold and a 40–50% share of the global cobot market, Universal Robots is the category's market leader. Unlike most industrial-robot vendors, Universal Robots ships an open, well-documented developer surface — RTDE, Dashboard Server, Primary/Secondary Client Interface, XML-RPC, URScript, the URCap SDK (PolyScope 5), and the PolyScope X URCap SDK — backed by official C++, Python, and ROS / ROS 2 client libraries on GitHub.
+Universal Robots is a Danish collaborative-robot (cobot) manufacturer headquartered in Odense, Denmark, founded in 2005 by Esben Østergaard, Kasper Støy, and Kristian Kassow, and acquired by Teradyne in 2015 for USD 285 million. Universal Robots is the market leader in cobots, with more than 100,000 units sold worldwide and a 40–50% share of the global collaborative-robot market. The company ships two product generations — the e-Series (UR3e, UR7e, UR12e, UR16e) and the newer high-payload UR series (UR8 Long, UR15, UR18, UR20, UR30) — running the PolyScope 5 teach-pendant software stack and the next-generation PolyScope X platform. Universal Robots is unusual among industrial-robot vendors in publishing an extensive open developer surface: the C++ Universal_Robots_Client_Library, the Universal_Robots_ROS_Driver and Universal_Robots_ROS2_Driver, the RTDE Python Client Library, the Universal_Robots_Isaac_Driver for NVIDIA Isaac, the URCap SDK (PolyScope 5 Java) and PolyScopeX URCap SDK (TypeScript/HTML), and the URScript language. The wire-level protocols — Real-Time Data Exchange (RTDE), Dashboard Server, Primary/Secondary Client Interface, Reverse/Trajectory interfaces, XML-RPC, and the Tool Communication forwarder — are all documented and externally addressable over TCP, making UR cobots first-class citizens in third-party automation stacks, ROS/ROS 2, MoveIt, Isaac Sim, and the UR+ ecosystem (500+ certified end-effectors, vision systems, and URCap software extensions on universal-robots.com/plus). Universal Robots does not publish a public HTTP/REST API or OpenAPI specification — all programmatic access is via the documented socket protocols and SDKs.
 
-**URL:** [Visit APIs.json](https://raw.githubusercontent.com/api-evangelist/universal-robots/refs/heads/main/apis.yml)
+**Areas:** Robotics · Collaborative Robots · Cobots · Industrial Automation · Manufacturing · PolyScope · PolyScopeX · URCaps · URScript · RTDE · ROS · ROS 2
 
-**Run:** [Capabilities Using Naftiko](https://github.com/naftiko/fleet?utm_source=api-evangelist&utm_medium=readme&utm_campaign=company-api-evangelist&utm_content=repo)
+## Universal Robots on APIs.io
 
-## Tags
+Everything profiled for Universal Robots is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/universal-robots/](https://apis.io/providers/universal-robots/)** — or go straight to one of the APIs or properties below.
 
-- Robotics, Collaborative Robots, Cobots, Industrial Automation, Manufacturing, PolyScope, PolyScopeX, URCaps, URScript, RTDE, ROS, ROS 2, Teradyne, Danish, Hardware
+### APIs (7)
 
-## Timestamps
+- [Universal Robots Real-Time Data Exchange (RTDE)](https://apis.io/apis/universal-robots/rtde/) — Real-Time Data Exchange is Universal Robots' synchronous binary TCP protocol on port 30004 that lets external applications stream robot state at the…
+- [Universal Robots Dashboard Server](https://apis.io/apis/universal-robots/dashboard-server/) — Plain-text TCP command interface on port 29999 used to power on/off the robot, load and play programs, query safety state, and manage installations.…
+- [Universal Robots Primary and Secondary Client Interface](https://apis.io/apis/universal-robots/primary-secondary-client-interface/) — Streaming binary interface on ports 30001 (Primary, 10 Hz) and 30002 (Secondary, 10 Hz) that emits robot state and configuration messages and accepts…
+- [URScript](https://apis.io/apis/universal-robots/urscript/) — URScript is Universal Robots' purpose-built scripting language for cobot motion, I/O, and process control. URScript programs can be authored in PolyScope,…
+- [URCap SDK (PolyScope 5)](https://apis.io/apis/universal-robots/urcap-sdk/) — The URCap SDK is the Java-based extension framework for PolyScope 5 that powers Universal Robots' UR+ ecosystem. URCaps add program nodes, installation…
+- [PolyScope X URCap SDK](https://apis.io/apis/universal-robots/polyscopex-urcap-sdk/) — The PolyScope X URCap SDK is the TypeScript/HTML extension framework for Universal Robots' next-generation PolyScope X teach-pendant operating system that…
+- [Universal Robots Real-Time Interface](https://apis.io/apis/universal-robots/realtime-interface/) — Binary state interface on port 30003 emitting robot state at the 125 Hz / 500 Hz controller cycle. Predates RTDE and is still supported for low-latency…
 
-- **Created:** 2026-05-25
-- **Modified:** 2026-05-25
+### Published properties
 
-## Product Lines
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-| Generation | Model | Payload | Reach |
-|---|---|---|---|
-| e-Series | UR3e | 3 kg | 500 mm |
-| e-Series | UR7e | 7.5 kg | 850 mm |
-| e-Series | UR12e | 12.5 kg | 1300 mm |
-| e-Series | UR16e | 16 kg | 900 mm |
-| UR Series | UR8 Long | 10 kg | 1750 mm |
-| UR Series | UR15 | 17.5 kg | 1300 mm |
-| UR Series | UR18 | 18 kg | 950 mm |
-| UR Series | UR20 | 25 kg | 1750 mm |
-| UR Series | UR30 | 35 kg | 1300 mm |
+#### JSON-LD (1)
 
-## APIs and Interfaces
+Linked-data contexts for the provider's vocabulary.
 
-Universal Robots does not publish an HTTP/REST API or OpenAPI specification. Programmatic access is exclusively via documented TCP socket protocols and SDKs.
+- [Universal Robots Context](https://apis.io/jsonld/universal-robots/universal-robots-context/)
 
-### Real-Time Data Exchange (RTDE)
-Synchronous binary TCP protocol on port 30004 streaming robot state at the controller cycle (500 Hz on e-Series, 125 Hz on CB3) and accepting writeable inputs. Canonical integration point for vision, force/torque, OEE telemetry, and ROS / ROS 2 drivers.
+#### Vocabulary (1)
 
-- [Documentation](https://docs.universal-robots.com/)
-- [RTDE Guide](https://www.universal-robots.com/articles/ur/interface-communication/real-time-data-exchange-rtde-guide/)
-- [SDK — RTDE Python Client Library](https://github.com/UniversalRobots/RTDE_Python_Client_Library)
-- [SDK — C++ Client Library](https://github.com/UniversalRobots/Universal_Robots_Client_Library)
-- [SDK — RTDE ROS 2 Publisher](https://github.com/UniversalRobots/RTDE_ROS2_Publisher)
+The provider's domain terms, defined.
 
-### Dashboard Server
-Plain-text TCP command interface on port 29999 for power, program load/play, safety state, and installation management. The easiest remote-control entry point for shop-floor MES integration.
+- [Universal Robots Vocabulary](https://apis.io/vocabularies/universal-robots/universal-robots-vocabulary/)
 
-- [Dashboard Server (CB Series)](https://www.universal-robots.com/articles/ur/dashboard-server-cb-series-port-29999/)
-- [Dashboard Server (e-Series)](https://www.universal-robots.com/articles/ur/dashboard-server-e-series-port-29999/)
-- [SDK — C++ Client Library](https://github.com/UniversalRobots/Universal_Robots_Client_Library)
+#### Security (1)
 
-### Primary and Secondary Client Interface
-Streaming binary interfaces on ports 30001 (Primary, 10 Hz, includes configuration) and 30002 (Secondary, 10 Hz). The Secondary interface is the recommended channel for sending URScript at runtime.
+Authentication, trust centre, and vulnerability disclosure.
 
-- [Remote Control via TCP/IP](https://www.universal-robots.com/articles/ur/interface-communication/remote-control-via-tcpip/)
-- [Overview of Client Interfaces](https://www.universal-robots.com/articles/ur/interface-communication/overview-of-client-interfaces/)
-- [SDK — C++ Client Library](https://github.com/UniversalRobots/Universal_Robots_Client_Library)
+- [Universal Robots Domain Security](https://apis.io/security/universal-robots/universal-robots-domain-security/)
 
-### Real-Time Interface
-Binary state interface on port 30003 emitting robot state at the controller cycle. Predates RTDE; new integrations should prefer RTDE.
+## Where to find this API
 
-- [Remote Control via TCP/IP](https://www.universal-robots.com/articles/ur/interface-communication/remote-control-via-tcpip/)
-
-### XML-RPC
-URScript's `xmlrpc_factory` primitive lets a robot program call out to any user-hosted XML-RPC server mid-execution. Canonical pattern for delegating vision, business logic, or database lookups from a robot program to an off-board service.
-
-- [XML-RPC Tutorial](https://www.universal-robots.com/articles/ur/interface-communication/xml-rpc-tutorial/)
-
-### URScript
-Universal Robots' purpose-built scripting language for cobot motion, I/O, and process control. Authored in PolyScope, streamed over the Secondary Client Interface, or generated by ROS 2 driver and MoveIt.
-
-- [URScript Page](https://www.universal-robots.com/products/ur-developer-suite/urscript/)
-- [URScript Examples](https://github.com/UniversalRobots/URScript_Examples)
-
-### URCap SDK (PolyScope 5)
-Java-based extension framework that powers Universal Robots' UR+ ecosystem of certified third-party integrations. URCaps add program nodes, installation screens, daemons, and driver contributions (grippers, screwdrivers, vision).
-
-- [URCap Page](https://www.universal-robots.com/products/ur-developer-suite/urcap/)
-- [URCap Samples](https://github.com/UniversalRobots/URCap-Samples)
-- [UR+ Marketplace](https://www.universal-robots.com/plus/)
-
-### PolyScope X URCap SDK
-TypeScript/HTML extension framework for PolyScope X, the next-generation teach-pendant OS that ships on UR15/UR20/UR30 and newer cobots. PolyScope X URCaps are Docker-containerised for sandboxing and replace the legacy Java URCap model.
-
-- [PolyScope X Documentation](https://docs.universal-robots.com/polyscopex/)
-- [PolyScope X URCap SDK](https://github.com/UniversalRobots/PolyScopeX_URCap_SDK)
-
-## Official GitHub Repositories
-
-Universal Robots maintains an unusually broad open-source presence at [github.com/UniversalRobots](https://github.com/UniversalRobots):
-
-- [Universal_Robots_Client_Library](https://github.com/UniversalRobots/Universal_Robots_Client_Library) — C++ library exposing RTDE, Dashboard, Primary/Secondary, and motion streaming
-- [Universal_Robots_ROS2_Driver](https://github.com/UniversalRobots/Universal_Robots_ROS2_Driver) — ROS 2 driver (CB3 and e-Series)
-- [Universal_Robots_ROS_Driver](https://github.com/UniversalRobots/Universal_Robots_ROS_Driver) — ROS 1 driver (CB3 and e-Series)
-- [RTDE_Python_Client_Library](https://github.com/UniversalRobots/RTDE_Python_Client_Library) — RTDE Python client and examples
-- [Universal_Robots_ROS2_Description](https://github.com/UniversalRobots/Universal_Robots_ROS2_Description) — URDF descriptions for ROS 2
-- [Universal_Robots_ROS2_Gazebo_Simulation](https://github.com/UniversalRobots/Universal_Robots_ROS2_Gazebo_Simulation) — Gazebo simulation
-- [Universal_Robots_Isaac_Driver](https://github.com/UniversalRobots/Universal_Robots_Isaac_Driver) — NVIDIA Isaac SDK driver
-- [Universal_Robots_ExternalControl_URCap](https://github.com/UniversalRobots/Universal_Robots_ExternalControl_URCap) — PolyScope 5 URCap for ROS / ROS 2 drivers
-- [Universal_Robots_ExternalControl_URCapX](https://github.com/UniversalRobots/Universal_Robots_ExternalControl_URCapX) — PolyScope X URCap for ROS / ROS 2 drivers
-- [PolyScopeX_URCap_SDK](https://github.com/UniversalRobots/PolyScopeX_URCap_SDK) — PolyScope X URCap SDK
-- [URCap-Samples](https://github.com/UniversalRobots/URCap-Samples) — URCap sample projects
-- [URScript_Examples](https://github.com/UniversalRobots/URScript_Examples) — URScript examples and snippets
-- [ModbusExamples](https://github.com/UniversalRobots/ModbusExamples) — Modbus communication examples
-- [Universal_Robots_ROS_as_a_Service_URCap](https://github.com/UniversalRobots/Universal_Robots_ROS_as_a_Service_URCap) — rosbridge-backed ROS access from inside PolyScope
-
-## Resources
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://www.universal-robots.com/)
-- [Developer Suite](https://www.universal-robots.com/products/ur-developer-suite/)
 - [Documentation](https://docs.universal-robots.com/)
-- [GitHub](https://github.com/UniversalRobots)
-- [Forum](https://forum.universal-robots.com/)
-- [UR+ Marketplace](https://www.universal-robots.com/plus/)
-- [Academy](https://academy.universal-robots.com/)
-- [Partner Portal](https://partners.universal-robots.com/)
 - [Support](https://www.universal-robots.com/support/)
-- [Downloads](https://www.universal-robots.com/download/)
-- [About](https://www.universal-robots.com/about-universal-robots/)
-- [Newsroom](https://www.universal-robots.com/news-centre/)
-- [Careers](https://www.universal-robots.com/careers/)
-- [Contact](https://www.universal-robots.com/contact/)
-- [Parent — Teradyne](https://www.teradyne.com/)
-- [Sibling — Mobile Industrial Robots (MiR)](https://www.mobile-industrial-robots.com/)
-- [LinkedIn](https://www.linkedin.com/company/universal-robots/)
-- [YouTube](https://www.youtube.com/user/UniversalRobots)
-- [Twitter](https://twitter.com/universal_robot)
+- [Blog](https://www.universal-robots.com/blog/)
 
-## Maintainer
+## API Evangelist rating
 
-Kin Lane — kin@apievangelist.com
+**Kin Score 16.7** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 63.4 |
+| Contract quality | 14.7 |
+| Contract governance | 0.0 |
+| Operational transparency | 5.3 |
+| Developer ergonomics | 33.3 |
+| Access clarity | 0.0 |
+
+**Agent readiness 0.0** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 10.8** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/universal-robots/](https://apis.io/providers/universal-robots/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Universal Robots: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/universal-robots/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
